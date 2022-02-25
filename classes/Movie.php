@@ -4,7 +4,7 @@ class Movie{
     private $trama;
     private $genere;
     public $anno ="non Disponibile";
-    private $attori="non Disponibili";
+    private $attori="non Disponibili";    //attori è private, perciò dovrò fare prima un set e poi un get . NON posso fare tutto dentro get perche non funziona.
     private $lingua;
 
     public function __construct($_titolo,$_trama,$_genere){
@@ -14,12 +14,14 @@ class Movie{
     }
 
     public function getFilm(){
-        echo "<li><h1>".$this->titolo."</h1></li>
-              <li>Trama:". $this->trama."</li>
-              <li>Genere:". $this->genere."</li>
-              <li> Attori:". $this->getAttori()."</li>
-              <li>Anno:". $this->anno."</li>";
-    }
+        echo "<ul class='list-group list-group-flush p-4 col-4 border'>
+                <li class='list-group-item'><h1>".$this->titolo."</h1></li>
+                <li class='list-group-item'><span class='fw-bold'>Trama:</span>". $this->trama."</li>
+                <li class='list-group-item'><span class='fw-bold'>Genere:</span>". $this->genere."</li>
+                <li class='list-group-item'><span class='fw-bold'> Attori:</span>". $this->getAttori()."</li>
+                <li class='list-group-item'><span class='fw-bold'>Anno:</span>". $this->anno."</li>
+              </ul>";      
+            }
 
     public function setAttori($_attori){
         $this->attori = $_attori;

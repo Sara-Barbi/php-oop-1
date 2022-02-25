@@ -12,8 +12,6 @@ $cinema[1]-> setAttori("George MacKay: caporale William Schofield, Dean-Charles 
 $cinema[0]-> anno=1926;
 $cinema[2]-> anno=2019;
 $cinema[3]-> anno=2020;
-
-
 ?>
 
 <!DOCTYPE html>
@@ -22,16 +20,18 @@ $cinema[3]-> anno=2020;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        <?php
-        foreach($cinema as $movie){
-            echo $movie->getFilm();
-        }
-        ?>
-    </ul>
-    
+    <div class="container text-center">
+        <div class="row flex-wrap">
+            <?php
+                foreach($cinema as $movie){
+                    echo $movie->getFilm(); 
+                }
+            ?>
+        </div>
+    </div>   
 </body>
 </html>
