@@ -8,8 +8,12 @@ class Movie{
     private $lingua = "Italiano";
 
     public function __construct($_titolo,$_trama,$_genere){
-        $this->$_titolo = $titolo;
-        $this->$_trama = $trama;
-        $this->$_genere = $genere;
+        $this->titolo = $_titolo;
+        $this->trama = $_trama;
+        $this->genere = $_genere;
+    }
+
+    public function getFilm(){
+        return $this->titolo. $this->trama. $this->genere. $this->anno. $this->attori. $this->lingua;
     }
 }
