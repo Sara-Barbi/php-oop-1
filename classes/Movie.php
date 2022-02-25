@@ -3,17 +3,29 @@ class Movie{
     private $titolo;
     private $trama;
     private $genere;
-    private $anno;
-    private $attori;
-    private $lingua = "Italiano";
+    public $anno ="non Disponibile";
+    private $attori="non Disponibili";
+    private $lingua;
 
     public function __construct($_titolo,$_trama,$_genere){
-        $this->titolo = $_titolo;
+        $this->titolo = $_titolo;      //come mai titolo è senza $?? come fa a capire che è il titolo il valore che le passo
         $this->trama = $_trama;
         $this->genere = $_genere;
     }
 
     public function getFilm(){
-        return $this->titolo. $this->trama. $this->genere. $this->anno. $this->attori. $this->lingua;
+        echo "<li><h1>".$this->titolo."</h1></li>
+              <li>Trama:". $this->trama."</li>
+              <li>Genere:". $this->genere."</li>
+              <li> Attori:". $this->getAttori()."</li>
+              <li>Anno:". $this->anno."</li>";
+    }
+
+    public function setAttori($_attori){
+        $this->attori = $_attori;
+    }
+
+    public function getAttori(){
+        return $this->attori;
     }
 }
